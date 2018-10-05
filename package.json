@@ -1,0 +1,30 @@
+{
+  "name": "beer-finder-nolte",
+  "version": "1.0.0",
+  "description": "Beer finder app for Nolte JavaScript test",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wasmake/beer-finder-nolte.git"
+  },
+  "keywords": [
+    "beer",
+    "beer-search",
+    "nolte"
+  ],
+  "author": "Andrés Rosales Reyna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wasmake/beer-finder-nolte/issues"
+  },
+  "homepage": "https://github.com/wasmake/beer-finder-nolte#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.4"
+  }
+}
