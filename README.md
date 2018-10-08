@@ -4,7 +4,7 @@
 FullStack Web app based on NodeJS and (M)EAN Stack (not using databases). 
 This app uses external APIs in order to work such as <a href="https://www.fueleconomy.gov/ws/">FuelEconomy XML API</a>, <a href="https://www.fuelapi.com/">FuelAPI</a>, and GoogleMaps API (You will be required to place your own API Key on the config.json over /src/app/).
 
-This app calculates distance between two points (origin and destination) and gets the fuel economy average of the specific car given by the user from the FuelEconomy API. 
+This app calculates distance between two points (origin and destination) and gets the fuel economy average from the FuelEconomy API of the specific car given by the user, then calculates how much liters he will use in order to complete the trip. 
 
 ### Getting up and running
 =================================
