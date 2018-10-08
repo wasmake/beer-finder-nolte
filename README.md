@@ -1,10 +1,12 @@
 # Fuel trip calculator
 =================================
+
 FullStack Web app based on NodeJS and (M)EAN Stack (not using databases). 
 This app uses external APIs in order to work such as FuelEconomy XLM API, FuelAPI, and GoogleMaps API (You will be required to place your own API Key).
 
 ### Getting up and running
 =================================
+
 As easy as following this steps:
 Clonning from github:
 ```
