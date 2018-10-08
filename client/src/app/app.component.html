@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="well col-md-8 col-sm-12 col-md-offset-2">
+      <div class="form-content">
+        <p>Select your car:</p>
+        <form class="form-inline">
+          <div id="type_dropdown">
+            <select class="form-control" name="vehicltype" (change)="loadMakers($event.target.value)" [disabled]="yearDisabled">
+              <option role="presentation" value="">
+                Year
+              </option>
+              <option *ngFor="let year of carService.carYears" value="{{year.text._text}}">
+                {{year.text._text}}
+              </option>
+            </select>
+          </div>
+          <div id="make_dropdown">
+            <select class="form-control" name="make" (change)="loadModels($event.target.value)" [disabled]="makerDisabled">
+              <option role="presentation" value="">
+                Select Make
+              </option>
+              <option *ngFor="let makers of carService.carMakers" value="{{makers.text._text}}">
+                {{makers.text._text}}
+              </option>
+            </select>
+          </div>
+          <div id="model_dropdown">
+            <select class="form-control" name="model" (change)="loadAvg($event.target.value)" [disabled]="modelDisabled">
+              <option role="presentation" value="">
+                Select Model
+              </option>
+              <option *ngFor="let models of carService.carModels" value="{{models.text._text}}">
+                {{models.text._text}}
+              </option>
+            </select>
+          </div>
+          <div class="form-check form-check-inline" id="checkbox_clocation">
+            <input checked class="form-check-input" id="defaultCheck1" style="" type="checkbox" (change)="changeLocation()"> <label for="defaultCheck1" style="color: #999;">Current location</label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="location">
+    <div class="group">
+      <input id="from" required="" type="text" [disabled]="fromInput" [(ngModel)]="from"/> <span class="highlight"></span> <span class="bar"></span> <label>From</label>
+    </div>
+    <div class="group">
+      <input id="to" required="" type="text" #toInput (change)="loadTo($event.target.value)" [(ngModel)]="to" value=""/> <span class="highlight"></span> <span class="bar"></span> <label>To</label>
+    </div>
+    <p ng-show="fuelavg">Aprox fuel consumtion: {{fuelavg}}</p>
+  </div>
+</div>

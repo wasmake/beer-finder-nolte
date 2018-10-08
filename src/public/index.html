@@ -1,8 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
   </head>
   <body>
-    <h1>Hello world</h1>
+    <div class="container">
+      <div class="row">
+    <div class="well col-md-8 col-sm-12 col-md-offset-2">
+      <div class="form-content">
+      <p>Select your car: </p>
+	<form class="form-inline">
+		<div id="type_dropdown">
+			<select class="form-control" name="vehicltype" ng-change="loadMakes()">
+        <option role="presentation" value="">Year</option>
+      </select>
+		</div>
+		<div id="make_dropdown">
+			<select name="make" class="form-control" ng-change="loadModels()">
+				<option role="presentation" value="">Select Make</option>
+			</select>
+		</div>
+		<div id="model_dropdown">
+			<select name="model" class="form-control">
+				<option role="presentation" value="">Select Model</option>
+			</select>
+		</div>
+    <div id="checkbox_clocation" class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" style="" checked>
+      <label for="defaultCheck1" style="color: #999;">Current location</label>
+    </div>
+  </div>
+  </div>
+  </div>
+  <div class="location">
+  <div class="group">
+    <input type="text" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>From</label>
+  </div>
+  <div class="group">
+    <input type="text" required>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <label>To</label>
+  </div>
+</div>
+	</form>
+</div>
   </body>
 </html>
