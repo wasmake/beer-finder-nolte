@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="well col-md-8 col-sm-12 col-md-offset-2">
+    <div class="well col-md-8 col-sm-12 col-md-offset-2 animated fadeInDown">
       <div class="form-content">
-        <p>Select your car:</p>
+        <p><i class="fas fa-car"></i> Select your car</p>
         <form class="form-inline">
-          <div id="type_dropdown">
+          <div id="year_dropdown" class="col-lg-2 col-md-12 col-sm-12 col-12">
             <select class="form-control" name="vehicltype" (change)="loadMakers($event.target.value)" [disabled]="yearDisabled">
               <option role="presentation" value="">
                 Year
@@ -14,7 +14,7 @@
               </option>
             </select>
           </div>
-          <div id="make_dropdown">
+          <div id="make_dropdown" class="col-lg-3 col-md-12 col-sm-12 col-12 nopadding">
             <select class="form-control" name="make" (change)="loadModels($event.target.value)" [disabled]="makerDisabled">
               <option role="presentation" value="">
                 Select Make
@@ -24,7 +24,7 @@
               </option>
             </select>
           </div>
-          <div id="model_dropdown">
+          <div id="model_dropdown" class="col-lg-3 col-md-12 col-sm-12 col-12 nopadding">
             <select class="form-control" name="model" (change)="loadAvg($event.target.value)" [disabled]="modelDisabled">
               <option role="presentation" value="">
                 Select Model
@@ -34,20 +34,64 @@
               </option>
             </select>
           </div>
-          <div class="form-check form-check-inline" id="checkbox_clocation">
+          <div class="form-check form-check-inline col-lg-2 col-md-12 col-sm-12 col-12 nopadding" id="checkbox_clocation">
             <input checked class="form-check-input" id="defaultCheck1" style="" type="checkbox" (change)="changeLocation()"> <label for="defaultCheck1" style="color: #999;">Current location</label>
           </div>
         </form>
       </div>
     </div>
   </div>
-  <div class="location">
+  <div class="location  animate fadeInDown">
     <div class="group">
       <input id="from" required="" type="text" [disabled]="fromInput" [(ngModel)]="from"/> <span class="highlight"></span> <span class="bar"></span> <label>From</label>
     </div>
     <div class="group">
-      <input id="to" required="" type="text" #toInput (change)="loadTo($event.target.value)" [(ngModel)]="to" value=""/> <span class="highlight"></span> <span class="bar"></span> <label>To</label>
+      <input id="to" required="" type="text" #toInput (change)="loadTo($event.target.value)" [(ngModel)]="to" value="" placeholder=""/> <span class="highlight"></span> <span class="bar"></span> <label>To</label>
     </div>
-    <p ng-show="fuelavg">Aprox fuel consumtion: {{fuelavg}}</p>
+  </div>
+  <div class="mdl-grid">
+    <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp"  *ngIf="fuelcalc" [class.animate]="fuelcalc" [class.fadeInUp]="fuelcalc">
+      <figure class="mdl-card__media">
+        <img src="https://i.fuelapi.com/ade45da9738d4d2396d1e44e861c50f8/25707/1/11/stills_0640/MY2016/10828/10828_st0640_159.jpg" alt="" />
+      </figure>
+      <div class="mdl-card__title">
+        <h1 class="mdl-card__title-text"><i class="fas fa-map-marked-alt"></i> Trip details</h1>
+      </div>
+      <div class="mdl-card__supporting-text container-fluid">
+        <div class="row">
+          <p>Here is a summary of your trip, this are only estimations and not real numbers.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-4 col-sm-12 col-12">
+            <p><i class="fas fa-route"></i> ETA: {{fuelavg}}</p>
+          </div>
+          <div class="col-lg-6 col-md-4 col-sm-12 col-12">
+            <p><i class="fas fa-car-side"></i> Car: {{fuelavg}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-4 col-sm-12 col-12">
+            <p><i class="fas fa-ruler"></i> Dist: {{fuelavg}}</p>
+          </div>
+          <div class="col-lg-6 col-md-4 col-sm-12 col-12">
+            <p><i class="fas fa-money-bill-wave-alt"></i> Cost: {{fuelavg}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-4 col-sm-12 col-12">
+            <p><i class="fas fa-gas-pump"></i> Gas stops: {{fuelavg}}</p>
+          </div>
+          <div class="col-lg-6 col-md-4 col-sm-12 col-12">
+            <p><i class="fas fa-tint"></i> Fuel: {{fuelavg}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"><i class="fas fa-location-arrow"></i> Start trip</a>
+        <div class="mdl-layout-spacer"></div>
+        <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="fas fa-share-alt"></i></button>
+        <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="fas fa-trash"></i></button>
+      </div>
+    </div>
   </div>
 </div>

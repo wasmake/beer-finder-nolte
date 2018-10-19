@@ -5,15 +5,16 @@ body {
 }
 .well {
     margin: auto;
-    height: 60px;
-    padding: 12px;
-    margin-bottom: 20px;
+    min-height: 40px;
+    padding: 8px;
+    margin-bottom: 22px;
     background-color: #ffffff;
-
     box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 6px 6px rgba(0,0,0,0.20);
 }
-.form-content > form > div {
-  padding-right: 3px;
+.nopadding {
+   padding: 1px !important;
+   padding-right: 22px;
+   margin: 1px !important;
 }
 .form-content > form > div:last-child {
   padding-right: 0px;
@@ -21,21 +22,34 @@ body {
 }
 .form-content {
   float: right;
-  width: 90%;
-  font-size: 14px;
+  width: 95%;
+  font-size: 12px;
 }
 .form-content > p {
   display:inline;
   font-size: 13px;
   padding: 0px;
+  padding-right: 3px;
+  float: left;
+  vertical-align:bottom;
+  line-height: 36px;
+  color: #686868;
+}
+.form-content > p > i {
+  display:inline;
+  font-size: 32px;
+  padding: 0px;
+  padding-top: 2px;
   padding-right: 20px;
   float: left;
   vertical-align:bottom;
   line-height: 36px;
+  color: #686868;
 }
 .form-control {
-  font-size: 14px !important;
-  padding: .375rem .55rem;
+  font-size: 12px !important;
+  padding: .18rem .48rem;
+  min-width: 100%;
 }
 .location {
   margin: auto;
@@ -74,7 +88,7 @@ body {
   -webkit-transition:0.2s ease all;
 }
 .group input:focus ~ label, input:valid ~ label{
-  top:-12px;
+  top:-15px;
   font-size:12px;
   color:#2196f3;
 }
@@ -131,4 +145,165 @@ body {
 @keyframes inputHighlighter {
 	from { background:#fff; }
   to 	{ width:0; background:transparent; }
+}
+.mdl-cell {
+    box-sizing: border-box;
+}
+.mdl-grid {
+  padding-top: 65px;
+	max-width: 580px;
+  margin: auto;
+}
+.mdl-shadow--2dp {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+.mdl-card {
+    margin: auto;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 400;
+    min-height: 200px;
+    overflow: hidden;
+    width: 380px;
+    z-index: 1;
+    position: relative;
+    background: #fff;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+.mdl-card__title {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #000;
+    display: block;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: stretch;
+    -ms-flex-pack: stretch;
+    justify-content: stretch;
+    line-height: normal;
+    padding: 8px;
+    font-size: 16px !important;
+    -webkit-perspective-origin: 165px 56px;
+    perspective-origin: 165px 56px;
+    -webkit-transform-origin: 165px 56px;
+    transform-origin: 165px 56px;
+    box-sizing: border-box;
+}
+.mdl-card__title-text {
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    color: inherit;
+    display: block;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: normal;
+    overflow: hidden;
+    -webkit-transform-origin: 149px 48px;
+    transform-origin: 149px 48px;
+    margin: 0;
+}
+.mdl-card__title-text i {
+    padding-left: 9px;
+    padding-right: 12px;
+    color: rgb(0,150,136);
+    line-height: 34px;
+    font-size: 28px;
+}
+.mdl-card__supporting-text {
+    color: rgba(0,0,0,.54);
+    font-size: 12px;
+    line-height: 18px;
+    width: 92%;
+    margin: auto;
+}
+.mdl-card__supporting-text p {
+}
+.mdl-card__supporting-text p > i{
+    padding-right: 5px;
+    font-size: 18px;
+}
+.mdl-card__media {
+	margin: 0;
+}
+.mdl-card__media > img {
+	max-width: 100%;
+}
+.mdl-card__actions.mdl-card--border {
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.mdl-card__actions {
+	display: flex;
+	box-sizing:border-box;
+	align-items: center;
+}
+.mdl-card__actions {
+    font-size: 16px;
+    line-height: normal;
+    width: 100%;
+    background-color: transparent;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.mdl-card__actions > .mdl-button--icon {
+	margin-right: 3px;
+	margin-left: 3px;
+}
+.mdl-button.mdl-button--colored {
+    color: rgb(0,150,136, 0.8) !important;
+}
+.mdl-button {
+    background: 0 0;
+    border: none;
+    border-radius: 2px;
+    color: rgb(0,150,136, 0.8) !important;
+    position: relative;
+    height: 36px;
+    margin: 0;
+    min-width: 64px;
+    padding: 0 16px;
+    display: inline-block;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    overflow: hidden;
+    will-change: box-shadow;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    line-height: 36px;
+    vertical-align: middle;
+}
+.mdl-layout-spacer {
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+.mdl-button--icon {
+    border-radius: 50%;
+    font-size: 20px;
+    height: 32px;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 32px;
+    width: 32px;
+    padding: 0;
+    overflow: hidden;
+    color: inherit;
+    line-height: normal;
 }
